@@ -53,6 +53,14 @@ func Contains[T any](m Map) bool {
 	return exists
 }
 
+func Len(m Map) int {
+	return len(m.m)
+}
+
+func Clone(m Map) Map {
+	return Map{m: maps.Clone(m.m)}
+}
+
 func All(m Map) iter.Seq2[reflect.Type, any] {
 	return maps.All(m.m)
 }
