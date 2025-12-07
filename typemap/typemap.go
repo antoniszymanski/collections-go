@@ -12,8 +12,8 @@ type Map struct {
 	m map[reflect.Type]any
 }
 
-func New() Map {
-	return Map{m: make(map[reflect.Type]any)}
+func New(size int) Map {
+	return Map{m: make(map[reflect.Type]any, max(0, size))}
 }
 
 func Get[T any](m Map) T {
